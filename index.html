@@ -13,90 +13,101 @@
   }
 
   body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #fff;
-    text-align: center;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  /* Desktop pozadina */
-  body::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: url('desktop-background.jpg') no-repeat center center fixed;
-    background-size: cover;
-    z-index: -2;
-  }
-
-  /* Overlay sloj */
-  body::after {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    z-index: -1;
-  }
-
-  h1 {
-    font-size: 3em;
-    color: #ff3b3b;
-    margin-bottom: 0.4em;
-    animation: fadeIn 2s ease-in-out;
-  }
-
-  p {
-    font-size: 1.2em;
-    max-width: 600px;
-    margin-bottom: 1em;
-    padding: 0 20px;
-    animation: fadeIn 3s ease-in-out;
-  }
-
-  a {
-    color: #00b0ff;
-    text-decoration: none;
-    font-weight: bold;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
-
-  footer {
-    position: absolute;
-    bottom: 20px;
-    font-size: 0.9em;
-    color: #aaa;
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  /* Mobilna verzija */
-  @media (max-width: 768px) {
-    body::before {
-      background: url('mobile-background.jpg') no-repeat center center fixed;
-      background-size: cover;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+      text-align: center;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 40px 20px;
     }
 
-    h1 {
-      font-size: 2em;
+    /* Desktop pozadina */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url('desktop-background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      z-index: -2;
+    }
+    /* Overlay sloj */
+    body::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(4px);
+      z-index: -1;
+    }
+
+   h1 {
+      font-size: 3em;
+      color: #ff3b3b;
+      margin-bottom: 0.4em;
+      animation: fadeIn 2s ease-in-out;
     }
 
     p {
-      font-size: 1em;
-      padding: 0 15px;
+      font-size: 1.2em;
+      max-width: 600px;
+      margin-bottom: 1em;
+      padding: 0 20px;
+      animation: fadeIn 3s ease-in-out;
     }
-  }
+
+    a {
+      color: #00b0ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.9em;
+      color: #aaa;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Mobilna verzija */
+    @media (max-width: 768px) {
+      body::before {
+        background: url('mobile-background.jpg') no-repeat center center fixed;
+        background-size: 140%;
+      }
+
+      body::after {
+        background-color: rgba(0, 0, 0, 0.75);
+        backdrop-filter: blur(6px);
+      }
+
+      h1 {
+        font-size: 2em;
+      }
+
+      p {
+        font-size: 1em;
+        padding: 0 15px;
+      }
+
+      body {
+        padding-top: 80px;
+        padding-bottom: 80px;
+      }
+    }
 </style>
 
 </head>
