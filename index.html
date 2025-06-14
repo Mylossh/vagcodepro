@@ -4,11 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>VAGCODE PRO | Uskoro...</title>
+  <link rel="icon" href="favicon.png" type="image/png"> <!-- Favicon -->
   <style>
-    body {
+    /* Reset i osnovni stil */
+    * {
       margin: 0;
       padding: 0;
-      background-color: #111;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
       color: #fff;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       display: flex;
@@ -17,18 +24,21 @@
       align-items: center;
       height: 100vh;
       text-align: center;
+      backdrop-filter: brightness(0.5);
     }
 
     h1 {
       font-size: 3em;
       margin-bottom: 0.2em;
-      color: #ff3b3b; /* crvena boja */
+      color: #ff3b3b;
+      animation: fadeIn 2s ease-in-out;
     }
 
     p {
       font-size: 1.2em;
       max-width: 600px;
       margin-bottom: 1em;
+      animation: fadeIn 3s ease-in-out;
     }
 
     a {
@@ -45,16 +55,21 @@
       position: absolute;
       bottom: 20px;
       font-size: 0.9em;
-      color: #666;
+      color: #aaa;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
   <h1>Stižemo uskoro!</h1>
-  <p>Radimo na pripremi sajta i sadržaja. Bićeš u mogućnosti da nas uskoro kontaktiraš direktno putem web forme i da pogledaš šta sve nudimo.</p>
-  <p>Do tada, zapratite nas na <a href="https://www.instagram.com/vagcodepro.rs" target="_blank">Instagramu</a> za najnovije informacije i objave.</p>
+  <p>Radimo na pripremi sajta i sadržaja. Bićete u mogućnosti da nas uskoro kontaktirate direktno putem web forme i da pogledate šta sve nudimo.</p>
+  <p>Do tada, zapratite nas na <a href="https://www.instagram.com/vagcodepro" target="_blank">Instagramu</a> za najnovije informacije i objave.</p>
   <footer>
-    &copy; 2025 VAGCODE PRO
+    &copy; 2025 VAG CodePRO
   </footer>
 </body>
 </html>
