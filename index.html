@@ -86,7 +86,10 @@
     @media (max-width: 768px) {
       body::before {
         background: url('mobile-background.jpg') no-repeat center center fixed;
-        background-size: 140%;
+        background-size: 110%; /* smanji "zoom out" efekat */
+    /*  background-size: cover; - ako hoces da prekrije */
+   /*  transform: scale(1.2); - uvecaj sliku da se vidi manji deo */
+       
       }
 
       body::after {
