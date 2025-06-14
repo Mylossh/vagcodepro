@@ -4,9 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>VAGCODE PRO | Uskoro...</title>
-  <link rel="icon" href="favicon.png" type="image/png"> <!-- Favicon -->
+  <link rel="icon" href="favicon.png" type="image/png">
   <style>
-    /* Reset i osnovni stil */
     * {
       margin: 0;
       padding: 0;
@@ -14,23 +13,41 @@
     }
 
     body {
-      background: url('background.png') no-repeat center center fixed;
-      background-size: cover;
-      color: #fff;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+      text-align: center;
+      height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      text-align: center;
-      backdrop-filter: brightness(0.5);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Pozadinska slika */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      z-index: -2;
+    }
+
+    /* Tamni overlay sloj */
+    body::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0, 0, 0, 0.6); /* providni tamni sloj */
+      z-index: -1;
     }
 
     h1 {
       font-size: 3em;
-      margin-bottom: 0.2em;
       color: #ff3b3b;
+      margin-bottom: 0.4em;
       animation: fadeIn 2s ease-in-out;
     }
 
@@ -38,6 +55,7 @@
       font-size: 1.2em;
       max-width: 600px;
       margin-bottom: 1em;
+      padding: 0 20px;
       animation: fadeIn 3s ease-in-out;
     }
 
@@ -61,6 +79,11 @@
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2em; }
+      p { font-size: 1em; }
     }
   </style>
 </head>
